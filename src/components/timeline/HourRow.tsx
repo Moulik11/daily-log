@@ -21,14 +21,14 @@ export function HourRow({ log }: HourRowProps) {
     const isOverLimit = totalMinutes > 60;
     const hasActivities = log.activities.length > 0;
 
-    const handleSave = (data: Omit<Activity, 'id'>) => {
+    const handleSave = (data: Omit<Activity, 'id' | 'hour'>) => {
         addActivity(log.hour, data);
         // Don't close immediately, allow adding more? Or maybe close. 
         // User expectation: "User can add multiple activity entries". So keep open.
     };
 
-    const handleUpdate = (id: string, data: Omit<Activity, 'id'>) => {
-        updateActivity(log.hour, id, data);
+    const handleUpdate = (id: string, data: Partial<Activity>) => {
+        updateActivity(id, data);
         setEditingId(null);
     };
 
