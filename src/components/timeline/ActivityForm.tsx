@@ -97,11 +97,4 @@ export function ActivityForm({ initialData, onSave, onCancel, onDelete }: Activi
     );
 }
 
-function getColorHex(colorName: string) {
-    const map: Record<string, string> = {
-        green: '#22c55e', blue: '#3b82f6', purple: '#a855f7', orange: '#f97316',
-        pink: '#ec4899', indigo: '#6366f1', yellow: '#eab308', red: '#ef4444',
-        teal: '#14b8a6', cyan: '#06b6d4'
-    };
-    return map[colorName] || '#fff';
-}
+
