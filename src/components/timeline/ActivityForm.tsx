@@ -61,18 +61,10 @@ export function ActivityForm({ initialData, onSave, onCancel, onDelete }: Activi
                 />
             </div>
 
-            <div className="flex justify-between items-center">
-                <div className="flex gap-1.5 flex-wrap max-w-[60%]">
-                    {COLORS.map((c) => (
-                        <button
-                            key={c}
-                            type="button"
-                            onClick={() => setTheme(c)}
-                            className={`w-4 h-4 rounded-full transition-transform hover:scale-110 ${theme === c ? 'ring-2 ring-white ring-offset-1 ring-offset-neutral-900 scale-110' : 'opacity-60 hover:opacity-100'
-                                }`}
-                            style={{ backgroundColor: `var(--color-${c}-500, ${getColorHex(c)})` }}
-                        />
-                    ))}
+            <div className="flex justify-between items-center mt-3">
+                {/* Spacer or indicator of auto-color could go here, but for now empty to align buttons right */}
+                <div className="text-xs text-neutral-600 italic">
+                    Color auto-assigned
                 </div>
 
                 <div className="flex gap-2">
