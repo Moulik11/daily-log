@@ -106,7 +106,7 @@ export function HourRow({ log }: HourRowProps) {
                                         onSave={(data) => handleUpdate(editingId, data)}
                                         onCancel={() => setEditingId(null)}
                                         onDelete={() => {
-                                            deleteActivity(log.hour, editingId);
+                                            deleteActivity(editingId);
                                             setEditingId(null);
                                         }}
                                     />
