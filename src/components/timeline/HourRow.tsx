@@ -23,8 +23,7 @@ export function HourRow({ log }: HourRowProps) {
 
     const handleSave = (data: Omit<Activity, 'id' | 'hour'>) => {
         addActivity(log.hour, data);
-        // Don't close immediately, allow adding more? Or maybe close. 
-        // User expectation: "User can add multiple activity entries". So keep open.
+        setIsExpanded(false);
     };
 
     const handleUpdate = (id: string, data: Partial<Activity>) => {
